@@ -16,7 +16,7 @@ boundaryPlanes
 
     executeControl  writeTime;
 
-    fields          (U UMean p pMean T TMean rho rhoMean sMean cMean LMean entropyMonopole entropyGradient LPrime);
+    fields          (U UMean p pMean T TMean rho rhoMean sMean cSqMean LMean entropyMonopole entropyGradient LPrime);
 
     surfaceFormat   foam;
 
