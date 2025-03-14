@@ -1,32 +1,9 @@
-# Prerequisites
-*.d
+# OpenFOAM ignores
+SigmaSV/constant/polyMesh
+SigmaSV/*.*
+SigmaSV/*e-*
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+# Nektar ignores
+APE/Absorption/*.fld
+APE/BaseFlow/*.fld
+APE/Mesh.xml

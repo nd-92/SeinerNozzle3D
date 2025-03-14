@@ -1,0 +1,48 @@
+<NEKTAR>
+    <EXPANSIONS>
+        <E COMPOSITE="C[4]" NUMMODES="4" TYPE="GLL_LAGRANGE_SEM" FIELDS="p" />
+        <E COMPOSITE="C[4]" NUMMODES="4" TYPE="GLL_LAGRANGE_SEM" FIELDS="u" />
+        <E COMPOSITE="C[4]" NUMMODES="4" TYPE="GLL_LAGRANGE_SEM" FIELDS="v" />
+        <E COMPOSITE="C[4]" NUMMODES="4" TYPE="GLL_LAGRANGE_SEM" FIELDS="w" />
+    </EXPANSIONS>
+    <CONDITIONS>
+        <SOLVERINFO>
+            <I PROPERTY="GlobalSysSoln" VALUE="IterativeFull" />
+            <I PROPERTY="Projection" VALUE="Continuous" />
+        </SOLVERINFO>
+        <VARIABLES>
+            <V ID="0"> p </V>
+            <V ID="1"> u </V>
+            <V ID="2"> v </V>
+            <V ID="3"> w </V>
+        </VARIABLES>
+        <BOUNDARYREGIONS>
+            <B ID="0"> C[1] </B>
+            <B ID="1"> C[2] </B>
+            <B ID="2"> C[3] </B>
+        </BOUNDARYREGIONS>
+        <BOUNDARYCONDITIONS>
+            <!-- Nozzle inlet plane -->
+            <REGION REF="0">
+                <D VAR="p" VALUE="0" />
+                <D VAR="u" VALUE="0" />
+                <D VAR="v" VALUE="0" />
+                <D VAR="w" VALUE="0" />
+            </REGION>
+            <!-- External freestream -->
+            <REGION REF="1">
+                <D VAR="p" VALUE="-560000" />
+                <D VAR="u" VALUE="-46970248674295495494407^(1/2)/217275000" />
+                <D VAR="v" VALUE="-46970248674295495494407^(1/2)/217275000" />
+                <D VAR="w" VALUE="-46970248674295495494407^(1/2)/217275000" />
+            </REGION>
+            <!-- Nozzle walls -->
+            <REGION REF="2">
+                <N VAR="p" VALUE="0" />
+                <N VAR="u" VALUE="0" />
+                <N VAR="v" VALUE="0" />
+                <N VAR="w" VALUE="0" />
+            </REGION>
+        </BOUNDARYCONDITIONS>
+    </CONDITIONS>
+</NEKTAR>

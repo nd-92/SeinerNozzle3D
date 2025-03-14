@@ -1,0 +1,274 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2212                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+cutPlanes
+{
+    type            surfaces;
+
+    libs            (fieldFunctionObjects sampling);
+
+    writeControl    writeTime;
+
+    executeControl  writeTime;
+
+    fields          (U UMean p pMean T TMean rho rhoMean sMean cMean LMean entropyMonopole entropyGradient LPrime);
+
+    surfaceFormat   foam;
+
+    interpolationScheme cellPointFace;
+
+        xNormal_2
+        {
+            type            cuttingPlane;
+
+            point           (0.18288 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_3
+        {
+            type            cuttingPlane;
+
+            point           (0.27432 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_4
+        {
+            type            cuttingPlane;
+
+            point           (0.36576 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_5
+        {
+            type            cuttingPlane;
+
+            point           (0.4572 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_6
+        {
+            type            cuttingPlane;
+
+            point           (0.54864 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_7
+        {
+            type            cuttingPlane;
+
+            point           (0.64008 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_8
+        {
+            type            cuttingPlane;
+
+            point           (0.73152 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_9
+        {
+            type            cuttingPlane;
+
+            point           (0.82296 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_10
+        {
+            type            cuttingPlane;
+
+            point           (0.9144 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_11
+        {
+            type            cuttingPlane;
+
+            point           (1.00584 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_12
+        {
+            type            cuttingPlane;
+
+            point           (1.09728 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_13
+        {
+            type            cuttingPlane;
+
+            point           (1.18872 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_14
+        {
+            type            cuttingPlane;
+
+            point           (1.28016 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_15
+        {
+            type            cuttingPlane;
+
+            point           (1.3716 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_16
+        {
+            type            cuttingPlane;
+
+            point           (1.46304 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_17
+        {
+            type            cuttingPlane;
+
+            point           (1.55448 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_18
+        {
+            type            cuttingPlane;
+
+            point           (1.64592 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_19
+        {
+            type            cuttingPlane;
+
+            point           (1.73736 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+        xNormal_20
+        {
+            type            cuttingPlane;
+
+            point           (1.8288 0 0);
+
+            normal          (1 0 0);
+
+            interpolate     true;
+
+            surfaceFormat   foam;
+        }
+
+}
+
+// ************************************************************************* //

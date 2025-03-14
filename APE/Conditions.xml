@@ -1,0 +1,124 @@
+<NEKTAR>
+    <EXPANSIONS>
+        <E COMPOSITE="C[4]" NUMMODES="4" TYPE="GLL_LAGRANGE_SEM" FIELDS="p" />
+        <E COMPOSITE="C[4]" NUMMODES="4" TYPE="GLL_LAGRANGE_SEM" FIELDS="u" />
+        <E COMPOSITE="C[4]" NUMMODES="4" TYPE="GLL_LAGRANGE_SEM" FIELDS="v" />
+        <E COMPOSITE="C[4]" NUMMODES="4" TYPE="GLL_LAGRANGE_SEM" FIELDS="w" />
+    </EXPANSIONS>
+    <CONDITIONS>
+        <SOLVERINFO>
+            <I PROPERTY="EQType" VALUE="APE" />
+            <I PROPERTY="Projection" VALUE="DisContinuous" />
+            <I PROPERTY="AdvectionType" VALUE="WeakDG" />
+            <I PROPERTY="TimeIntegrationMethod" VALUE="ClassicalRungeKutta4" />
+            <I PROPERTY="UpwindType" VALUE="LaxFriedrichs" />
+            <I PROPERTY="GlobalSysSoln" VALUE="IterativeFull" />
+        </SOLVERINFO>
+        <PARAMETERS>
+            <P> TimeStep=4E-8 </P>
+            <P> NumSteps=5000000 </P>
+            <P> FinTime=TimeStep*NumSteps </P>
+            <P> IO_CheckSteps=2500 </P>
+            <P> IO_CFLSteps=1 </P>
+            <P> IO_InfoSteps=1 </P>
+        </PARAMETERS>
+        <VARIABLES>
+            <V ID="0"> p </V>
+            <V ID="1"> u </V>
+            <V ID="2"> v </V>
+            <V ID="3"> w </V>
+        </VARIABLES>
+        <BOUNDARYREGIONS>
+            <B ID="0"> C[1] </B>
+            <B ID="1"> C[2] </B>
+            <B ID="2"> C[3] </B>
+        </BOUNDARYREGIONS>
+        <BOUNDARYCONDITIONS>
+            <!-- Nozzle inlet plane -->
+            <REGION REF="0">
+                <D VAR="p" USERDEFINEDTYPE="RiemannInvariantBC" />
+                <D VAR="u" USERDEFINEDTYPE="RiemannInvariantBC" />
+                <D VAR="v" USERDEFINEDTYPE="RiemannInvariantBC" />
+                <D VAR="w" USERDEFINEDTYPE="RiemannInvariantBC" />
+            </REGION>
+            <!-- External freestream -->
+            <REGION REF="1">
+                <D VAR="p" USERDEFINEDTYPE="RiemannInvariantBC" />
+                <D VAR="u" USERDEFINEDTYPE="RiemannInvariantBC" />
+                <D VAR="v" USERDEFINEDTYPE="RiemannInvariantBC" />
+                <D VAR="w" USERDEFINEDTYPE="RiemannInvariantBC" />
+            </REGION>
+            <!-- Nozzle walls -->
+            <REGION REF="2">
+                <D VAR="p" USERDEFINEDTYPE="Wall" VALUE="0" />
+                <D VAR="u" USERDEFINEDTYPE="Wall" VALUE="0" />
+                <D VAR="v" USERDEFINEDTYPE="Wall" VALUE="0" />
+                <D VAR="w" USERDEFINEDTYPE="Wall" VALUE="0" />
+            </REGION>
+        </BOUNDARYCONDITIONS>
+        <FUNCTION NAME="Baseflow">
+            <F VAR="u0" FILE="BaseFlow/u0Smoothened.fld:u0" />
+            <F VAR="v0" FILE="BaseFlow/v0Smoothened.fld:v0" />
+            <F VAR="w0" FILE="BaseFlow/w0Smoothened.fld:w0" />
+            <F VAR="rho0" FILE="BaseFlow/rho0Smoothened.fld:rho0" />
+            <F VAR="c0sq" FILE="BaseFlow/c0sqSmoothened.fld:c0sq" />
+            <!--F VAR="u0" FILE="SmoothenedBaseFlow.fld:u0" />
+            <F VAR="v0" FILE="SmoothenedBaseFlow.fld:v0" />
+            <F VAR="w0" FILE="SmoothenedBaseFlow.fld:w0" />
+            <F VAR="rho0" FILE="SmoothenedBaseFlow.fld:rho0" />
+            <F VAR="c0sq" FILE="SmoothenedBaseFlow.fld:c0sq" /!-->
+            <!--E VAR="u0" VALUE="234851243371477477472035^(1/2)/144850000000" />
+            <E VAR="v0" VALUE="0" />
+            <E VAR="w0" VALUE="0" />
+            <E VAR="rho0" VALUE="2897000000000000000/2316201423852038833" />
+            <E VAR="c0sq" VALUE="16213409966964271831/144850000000000" /!-->
+        </FUNCTION>
+        <FUNCTION NAME="InitialConditions">
+            <E VAR="p" VALUE="0" />
+            <E VAR="u" VALUE="0" />
+            <E VAR="v" VALUE="0" />
+            <E VAR="w" VALUE="0" />
+            <!--F VAR="u" FILE="Mesh_40.chk:u" />
+            <F VAR="v" FILE="Mesh_40.chk:v" />
+            <F VAR="w" FILE="Mesh_40.chk:w" />
+            <F VAR="p" FILE="Mesh_40.chk:p" /!-->
+        </FUNCTION>
+        <FUNCTION NAME="CouplingSource">
+            <E VAR="p" VALUE="0" />
+            <E VAR="u" VALUE="0" />
+            <E VAR="v" VALUE="0" />
+            <E VAR="w" VALUE="0" />
+            <!--F VAR="u" FILE="Mesh_40.chk:F_1_u" />
+            <F VAR="v" FILE="Mesh_40.chk:F_1_v" />
+            <F VAR="w" FILE="Mesh_40.chk:F_1_w" />
+	        <F VAR="p" FILE="Mesh_40.chk:F_1_p" /!-->
+        </FUNCTION>
+        <FUNCTION NAME="AbsorptionCoefficient">
+            <F VAR="p" FILE="Absorption/pSmoothened.fld:p" />
+            <F VAR="u" FILE="Absorption/uSmoothened.fld:u" />
+            <F VAR="v" FILE="Absorption/vSmoothened.fld:v" />
+            <F VAR="w" FILE="Absorption/wSmoothened.fld:w" />
+            <!--F VAR="u" FILE="uAbsorptionWithInlet.fld:u" />
+            <F VAR="v" FILE="vAbsorptionWithInlet.fld:v" />
+            <F VAR="w" FILE="wAbsorptionWithInlet.fld:w" />
+            <F VAR="p" FILE="pAbsorptionWithInlet.fld:p" /!-->
+        </FUNCTION>
+    </CONDITIONS>
+    <COUPLING NAME="cpl1" TYPE="Cwipi">
+        <I PROPERTY="RemoteName" VALUE="cwipiFoam" />
+        <I PROPERTY="ReceiveSteps" VALUE="1" />
+        <!--I PROPERTY="FilterWidth" VALUE="0.0009144" /!-->
+        <!--I PROPERTY="Oversample" VALUE="2" /!-->
+        <I PROPERTY="ReceiveVariables" VALUE="F_0_p,F_0_u,F_0_v,F_0_w" />
+        <I PROPERTY="NotLocMethod" VALUE="Keep" />
+    </COUPLING>
+    <FORCING>
+        <FORCE TYPE="Absorption">
+            <COEFF> AbsorptionCoefficient </COEFF>
+        </FORCE>
+        <FORCE TYPE="Field">
+            <FIELDFORCETIMEFCN> 1.0 </FIELDFORCETIMEFCN>
+            <FIELDFORCE> CouplingSource </FIELDFORCE>
+        </FORCE>
+    </FORCING>
+</NEKTAR>

@@ -1,0 +1,33 @@
+<NEKTAR>
+    <EXPANSIONS>
+        <E COMPOSITE="C[4]" NUMMODES="4" TYPE="GLL_LAGRANGE_SEM" FIELDS="rho0" />
+    </EXPANSIONS>
+    <CONDITIONS>
+        <SOLVERINFO>
+            <I PROPERTY="GlobalSysSoln" VALUE="IterativeFull" />
+            <I PROPERTY="Projection" VALUE="Continuous" />
+        </SOLVERINFO>
+        <VARIABLES>
+            <V ID="0"> rho0 </V>
+        </VARIABLES>
+        <BOUNDARYREGIONS>
+            <B ID="0"> C[1] </B>
+            <B ID="1"> C[2] </B>
+            <B ID="2"> C[3] </B>
+        </BOUNDARYREGIONS>
+        <BOUNDARYCONDITIONS>
+            <!-- Nozzle inlet plane -->
+            <REGION REF="0">
+                <N VAR="rho0" VALUE="0" />
+            </REGION>
+            <!-- External freestream -->
+            <REGION REF="1">
+                <N VAR="rho0" VALUE="0" />
+            </REGION>
+            <!-- Nozzle walls -->
+            <REGION REF="2">
+                <N VAR="rho0" VALUE="0" />
+            </REGION>
+        </BOUNDARYCONDITIONS>
+    </CONDITIONS>
+</NEKTAR>
