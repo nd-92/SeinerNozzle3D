@@ -29,7 +29,7 @@ deltaT              4e-8;
 
 writeControl        timeStep;
 
-writeInterval       2500;
+writeInterval       25;
 
 purgeWrite          3;
 
@@ -51,7 +51,7 @@ maxCo               1;
 
 maxDeltaT           4e-8;
 
-cwipiSwitch         true;
+cwipiSwitch         false;
 
 cwipiAveraging      false;
 

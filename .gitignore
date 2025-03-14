@@ -3,7 +3,10 @@ SigmaSV/constant/polyMesh
 SigmaSV/*.*
 SigmaSV/*e-*
 SigmaSV/processor*
-postProcessSources/
+postProcessSources/constant/polyMesh
+postProcessSources/*.*
+postProcessSources/*e-*
+postProcessSources/processor*
 
 # Nektar ignores
 APE/Absorption/*.fld
