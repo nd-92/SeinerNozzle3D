@@ -2,8 +2,13 @@
 SigmaSV/constant/polyMesh
 SigmaSV/*.*
 SigmaSV/*e-*
+SigmaSV/processor*
 
 # Nektar ignores
 APE/Absorption/*.fld
 APE/BaseFlow/*.fld
 APE/Mesh.xml
+APE/Mesh_*
+APE/*.chk
+APE/*.fld
+APE/*.dat
