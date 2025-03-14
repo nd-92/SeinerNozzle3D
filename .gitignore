@@ -12,3 +12,8 @@ APE/Mesh_*
 APE/*.chk
 APE/*.fld
 APE/*.dat
+
+# Job file ignores
+*.slurm
+*.out
+*.sh
