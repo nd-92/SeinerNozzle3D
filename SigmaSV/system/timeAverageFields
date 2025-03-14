@@ -36,7 +36,7 @@ fieldAverage0
             allowRestart  true;
         }
             
-        c
+        cSq
         {
             mean          true;
 
