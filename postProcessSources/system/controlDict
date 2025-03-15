@@ -75,11 +75,7 @@ functions
     #include "cutPlanes"
     #include "boundarySurfaces"
     #include "xPlanes"
+    #include "probes"
 }
-
-// functions
-// {
-//     #include "probes"
-// }
 
 // ************************************************************************* //
