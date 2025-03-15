@@ -18,6 +18,7 @@ APE/Mesh_*
 APE/*.chk
 APE/*.fld
 APE/*.dat
+APE/MicrophoneNoise*
 
 # Job file ignores
 *.slurm
