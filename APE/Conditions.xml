@@ -91,7 +91,7 @@
             <!--F VAR="u" FILE="Mesh_40.chk:F_1_u" />
             <F VAR="v" FILE="Mesh_40.chk:F_1_v" />
             <F VAR="w" FILE="Mesh_40.chk:F_1_w" />
-	        <F VAR="p" FILE="Mesh_40.chk:F_1_p" /!-->
+            <F VAR="p" FILE="Mesh_40.chk:F_1_p" /!-->
         </FUNCTION>
         <FUNCTION NAME="AbsorptionCoefficient">
             <F VAR="p" FILE="Absorption/pSmoothened.fld:p" />
