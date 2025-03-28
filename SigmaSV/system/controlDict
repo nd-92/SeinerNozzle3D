@@ -57,7 +57,7 @@ cwipiAveraging      false;
 
 cwipiDim            3;
 
-cwipiStep           1;
+cwipiStep           5;
 
 cwipiLambVector     true;
 
