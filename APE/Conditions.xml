@@ -11,14 +11,14 @@
             <I PROPERTY="Projection" VALUE="DisContinuous" />
             <I PROPERTY="AdvectionType" VALUE="WeakDG" />
             <I PROPERTY="TimeIntegrationMethod" VALUE="ClassicalRungeKutta4" />
-            <I PROPERTY="UpwindType" VALUE="LaxFriedrichs" />
+            <I PROPERTY="UpwindType" VALUE="APEUpwind" />
             <I PROPERTY="GlobalSysSoln" VALUE="IterativeFull" />
         </SOLVERINFO>
         <PARAMETERS>
-            <P> TimeStep=4E-8 </P>
+            <P> TimeStep=2E-7 </P>
             <P> NumSteps=5000000 </P>
             <P> FinTime=TimeStep*NumSteps </P>
-            <P> IO_CheckSteps=2500 </P>
+            <P> IO_CheckSteps=500 </P>
             <P> IO_CFLSteps=1 </P>
             <P> IO_InfoSteps=1 </P>
         </PARAMETERS>
@@ -108,7 +108,7 @@
         <I PROPERTY="RemoteName" VALUE="cwipiFoam" />
         <I PROPERTY="ReceiveSteps" VALUE="1" />
         <!--I PROPERTY="FilterWidth" VALUE="0.0009144" /!-->
-        <!--I PROPERTY="Oversample" VALUE="2" /!-->
+        <I PROPERTY="Oversample" VALUE="2" />
         <I PROPERTY="ReceiveVariables" VALUE="F_0_p,F_0_u,F_0_v,F_0_w" />
         <I PROPERTY="NotLocMethod" VALUE="Keep" />
     </COUPLING>
